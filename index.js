@@ -250,6 +250,12 @@ function transformProduct(product) {
     clone.querySelector(".productName").textContent = product.name;
     clone.querySelector(".productPrice").textContent = "$"+product.price; // TODO: handle weirdness
 
+    // Set the product's data attributes
+    clone.querySelector("article").dataset.name = product.name; // for alphabetic sorting
+    clone.querySelector("article").dataset.price = product.price; // for price sorting
+    clone.querySelector("article").dataset.id = product.id; // for recommended sorting
+
+
     // Set the product spec sheet details with template literal
     const specs = `
         <dt>Target:</dt>
@@ -290,4 +296,35 @@ for (let i = 0; i < products.length; i++){
     let currClone = transformProduct(currProduct);
 
     productFeed.appendChild(currClone);
+}
+
+const sortingControls = document.querySelector("#sort");
+
+sortingControls.addEventListener("change", (e) => {
+    //based on e.target.value we should sort things in a differnet way
+    sortProducts(e.target.value);
+});
+
+// Helper function to sort products based on a value
+function sortProducts(sortingMethod) {
+    // Depending on the sorting method, sort the elements accordingly
+
+    // Get products on page
+    const productFeed = document.querySelector(".productGrid");
+    const productsOnPage = [...productFeed.children];
+
+    // Depending on sortingMethod do something to the array
+    if(sortingMethod === "priceAsc") {
+        productsOnPage.sort((a,b) => a.dataset.price - b.dataset.price);
+    } else if (sortingMethod === "priceDesc") {
+        productsOnPage.sort((a,b) => b.dataset.price - a.dataset.price);
+    } else if (sortingMethod === "atoz") {
+        productsOnPage.sort((a,b) => a.dataset.name.localeCompare(b.dataset.name));
+    } else if (sortingMethod === "ztoa") {
+        productsOnPage.sort((a,b) => b.dataset.name.localeCompare(a.dataset.name));
+    } else {
+        productsOnPage.sort((a,b) => a.dataset.id.localeCompare(b.dataset.id));
+    }
+
+    productsOnPage.forEach((product) => productFeed.appendChild(product));
 }
