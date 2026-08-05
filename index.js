@@ -300,10 +300,8 @@ for (let i = 0; i < products.length; i++){
 
 const sortingControls = document.querySelector("#sort");
 
-sortingControls.addEventListener("change", (e) => {
-    //based on e.target.value we should sort things in a differnet way
-    sortProducts(e.target.value);
-});
+//based on e.target.value we should sort things in a differnet way
+sortingControls.addEventListener("change", (e) => sortProducts(e.target.value));
 
 // Helper function to sort products based on a value
 function sortProducts(sortingMethod) {
@@ -326,5 +324,6 @@ function sortProducts(sortingMethod) {
         productsOnPage.sort((a,b) => a.dataset.id.localeCompare(b.dataset.id));
     }
 
+    // appendChild will correctly place a node that already exists in the dom
     productsOnPage.forEach((product) => productFeed.appendChild(product));
 }
