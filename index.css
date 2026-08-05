@@ -1,0 +1,155 @@
+:root {
+    /* Variables for color */
+    --color_0: #f8f9fa;
+    --color_1: #e9ecef;
+    --color_2: #dee2e6;
+    --color_3: #ced4da;
+    --color_4: #adb5bd;
+    --color_5: #6c757d;
+    --color_6: #495057;
+    --color_7: #343a40;
+    --color_8: #212529;
+
+    /* Set the background and text colors for the rest of the doc */
+    background-color: var(--color_0);
+    color: var(--color_8);
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#navigation,
+#pageContent {
+    width: 100%;
+}
+
+#navigation {
+    border-bottom: solid 1px var(--color_8)
+}
+
+section.container {
+    width: auto;
+    max-width: 1350px;
+
+    margin-inline: auto;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    padding-block: 1rem;
+    padding-inline: 0.75rem;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.5rem; /* this evaluates to 24px */
+}
+
+.sitenav {
+    display: flex;
+    gap: 2.25rem;
+    flex-wrap: wrap;
+}
+
+.navlinks {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+
+    a {
+        text-decoration: none;
+        color: var(--color_8);
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+}
+
+/* PRODUCT CARD */
+.productCard {
+    border: solid 1px var(--color_6);
+    max-width: 320px;
+    overflow: hidden;
+}
+
+.cardImageContainer img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-bottom: solid 1px var(--color_4);
+}
+
+.cardBody {
+    padding: 1rem;
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.5rem;
+    border-bottom: solid 1px var(--color_8);
+}
+
+.productName {
+    margin: 0;
+    font-family: serif;
+}
+
+.specSheet {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    row-gap: 0.5rem;
+    padding-block: 1rem;
+    font-size: 0.85rem;
+
+    border-bottom: solid 1px var(--color_4);
+
+    dt {
+        text-transform: uppercase;
+        font-weight: bold;
+        color: var(--color_6);
+    }
+
+    dd {
+        margin: 0;
+    }
+}
+
+.ingredients {
+    font-size: 0.85rem;
+
+    strong {
+        color: var(--color_6);
+    }
+}
+
+.addToCartButton {
+    width: 100%;
+    padding: 0.5rem;
+    border: 0;
+    background-color: var(--color_8);
+    color: var(--color_0);
+    font-weight: bold;
+}
+
+/* PRODUCT GRID */
+.productGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+}

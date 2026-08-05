@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R&R | Ecommerce Prototype</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js" defer></script>
+</head>
+
+<body>
+    <!-- Navigation bar will go in here -->
+    <header id="navigation">
+        <section class="container navbar">
+            <!-- logo -->
+            <span class="logo">Root & Remedy</span>
+            <!-- navigation links -->
+            <nav class="sitenav">
+                <!-- Home, about etc. -->
+                <ul class="navlinks">
+                    <li><a href="#" class="navlink">Home</a></li>
+                    <li><a href="#" class="navlink">Our Story</a></li>
+                    <li><a href="#" class="navlink">Contact</a></li>
+                </ul>
+                <!-- Cart and sign in -->
+                <ul class="navlinks">
+                    <li><a href="#" class="navlink">Cart</a></li>
+                    <li><a href="#" class="navlink">Sign In</a></li>
+                </ul>
+            </nav>
+        </section>
+    </header>
+
+    <!-- Main content like products, hero section etc. -->
+    <main id="pageContent">
+        <section class="container">
+            <h1>Welcome!</h1>
+            <p>Please see our products below...</p>
+        </section>
+        <section class="container">
+            <main id="feed">
+                <div class="feedHeader">
+                    <h2>Products</h2>
+                </div>
+                <div class="productGrid">
+                    <!-- Product content will go in here -->
+                </div>
+            </main>
+            <aside id="filters">
+                <h2>Filters</h2>
+            </aside>
+        </section>
+    </main>
+
+    <!-- Footer for contact info, copyright etc. -->
+    <footer>
+
+    </footer>
+
+    <!-- TEMPLATES BELOW -->
+    <template id="productCardTemplate">
+        <article class="productCard">
+            <!-- Card Image -->
+            <div class="cardImageContainer">
+                <img src="https://picsum.photos/400/400" alt="Some Image">
+            </div>
+            <!-- Card Body -->
+            <div class="cardBody">
+                <!-- Product name and price in flex container -->
+                <header class="cardHeader">
+                    <h3 class="productName">Some Product Name</h3>
+                    <span class="productPrice">$49</span>
+                </header>
+                <!-- Spec Sheet in semantic definition list -->
+                <dl class="specSheet">
+                    <dt>Target:</dt>
+                    <dd>Sleep</dd>
+
+                    <dt>Format:</dt>
+                    <dd>Gummy</dd>
+
+                    <dt>Dietary:</dt>
+                    <dd>Vegan, Gluten Free</dd>
+                </dl>
+                <footer class="cardFooter">
+                    <p class="ingredients">
+                        <strong>Formulated with:</strong> Chamomile, L-Carnitine
+                    </p>
+                </footer>
+                <button class="addToCartButton">Add to Cart</button>
+            </div>
+        </article>
+    </template>
+
+</body>
+
+</html>
