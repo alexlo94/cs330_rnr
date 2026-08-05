@@ -42,6 +42,17 @@
             <main id="feed">
                 <div class="feedHeader">
                     <h2>Products</h2>
+                    <!-- Sorting Controls Below -->
+                     <div class="sortingControls">
+                        <label for="sortingOptions">Sort By:</label>
+                        <select name="sortingOptions" id="sort">
+                            <option value="recommended">Recommended</option>
+                            <option value="priceAsc">Price Low to High</option>
+                            <option value="priceDesc">Price High to Low</option>
+                            <option value="atoz">Alphabetically A-Z</option>
+                            <option value="ztoa">Alphabetically Z-A</option>
+                        </select>
+                     </div>
                 </div>
                 <div class="productGrid">
                     <!-- Product content will go in here -->
